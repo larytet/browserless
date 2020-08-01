@@ -69,6 +69,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # 9. Run everything after as non-privileged user.
 USER pwuser
 
+WORKDIR /home/pwuser
+
 RUN mkdir ~/.node && \
     touch ~/.npmrc && \
     echo "prefix = ~/.node" >> ~/.npmrc
