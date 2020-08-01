@@ -90,8 +90,8 @@ RUN touch ~/.profile && \
     echo "PATH=\"$HOME/.node/bin:$PATH\""  >> ~/.profile && \
     echo "MANPATH=\"$HOME/.node/share/man:$MANPATH\""  >> ~/.profile && \
     cat ~/.npmrc && \
-    cat ~/.profile && \
+    cat ~/.profile
 
 COPY . /home/pwuser/app/
 WORKDIR /home/pwuser/app
-CMD ["start.sh"]
+CMD ["./start.sh"]

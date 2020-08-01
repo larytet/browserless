@@ -19,7 +19,7 @@ xvfb=$!
 export DISPLAY=:99
 
 echo NODE_PATH=$NODE_PATH
-dumb-init -- node --inspect ./build/index.js $@ &
+dumb-init -- node --inspect ./src/app.js $@ &
 node=$!
 
 wait $node
