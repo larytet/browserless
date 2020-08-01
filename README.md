@@ -5,7 +5,7 @@
 
 ```
 docker build --tag browserless . && \
-docker run --rm browserless
+docker run --rm --cap-add=SYS_ADMIN browserless
 ```
 
 ## Links
@@ -20,3 +20,4 @@ docker run --rm browserless
 * https://github.com/Zenika/alpine-chrome#image-disk-size
 * https://playwright.dev/#
 * https://blog.logrocket.com/playwright-vs-puppeteer/
+* https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md#setting-up-chrome-linux-sandbox
