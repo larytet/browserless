@@ -75,22 +75,14 @@ WORKDIR /home/pwuser
 
 # Based on https://topaxi.codes/use-npm-without-root-or-sudo-rights/
 RUN mkdir ~/.node && \
-    touch ~/.npmrc && \
-    echo "prefix = ~/.node" >> ~/.npmrc
-
+    touch ~/.npmrc
 
 # See https://github.com/microsoft/playwright/issues/812
 RUN echo "Brace yourself this takes time" && \
     npm i -D --loglevel verbose playwright-chromium
 
 # 11. Run it
-RUN mkdir app 
-RUN touch ~/.profile && \
-    echo "NODE_PATH=\"$HOME/.node/lib/node_modules:$NODE_PATH\"" >> ~/.profile && \
-    echo "PATH=\"$HOME/.node/bin:$PATH\""  >> ~/.profile && \
-    echo "MANPATH=\"$HOME/.node/share/man:$MANPATH\""  >> ~/.profile && \
-    cat ~/.npmrc && \
-    cat ~/.profile
+RUN mkdir -p ./app 
 
 COPY . /home/pwuser/app/
 WORKDIR /home/pwuser/app
