@@ -77,5 +77,6 @@ RUN mkdir ~/.node && \
     touch ~/.npmrc && \
     echo "prefix = ~/.node" >> ~/.npmrc
 
-RUN npm i -D playwright
+RUN echo "Brace yourself this takes time" && \
+    npm i -D --loglevel verbose playwright
 
