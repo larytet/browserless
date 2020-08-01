@@ -5,7 +5,7 @@
 
 ```
 docker build --tag browserless . && \
-docker run --rm -p 9229:9229 --cap-add=SYS_ADMIN browserless
+docker run --rm -p 9229:9229 -p 5900:5900 --cap-add=SYS_ADMIN browserless
 ```
 
 ## Links
