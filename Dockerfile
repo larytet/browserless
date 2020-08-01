@@ -77,12 +77,19 @@ RUN mkdir ~/.node && \
     touch ~/.npmrc && \
     echo "prefix = ~/.node" >> ~/.npmrc
 
+
 # See https://github.com/microsoft/playwright/issues/812
 RUN echo "Brace yourself this takes time" && \
     npm i -D --loglevel verbose playwright-chromium
 
 # 11. Run it
 RUN mkdir app 
+RUN touch ~/.profile && \
+    echo "NODE_PATH=\"$HOME/.node/lib/node_modules:$NODE_PATH\"" >> ~/.profile && \
+    echo "PATH=\"$HOME/.node/bin:$PATH\""  >> ~/.profile && \
+    cat ~/.npmrc && \
+    cat ~/.profile
+
 COPY . /home/pwuser/app/
 WORKDIR /home/pwuser/app
 CMD ["node", "src/app.js"]
