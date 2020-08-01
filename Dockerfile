@@ -69,8 +69,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # 9. Run everything after as non-privileged user.
 USER pwuser
 
+# 10. Install Playwright
 WORKDIR /home/pwuser
 
+# Based on https://topaxi.codes/use-npm-without-root-or-sudo-rights/
 RUN mkdir ~/.node && \
     touch ~/.npmrc && \
     echo "prefix = ~/.node" >> ~/.npmrc
