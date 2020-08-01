@@ -1,3 +1,4 @@
+# Based on https://github.com/microsoft/playwright/blob/master/docs/docker/Dockerfile.bionic
 FROM ubuntu:bionic
 
 # 1. Install node12
