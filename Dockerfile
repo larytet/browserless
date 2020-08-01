@@ -87,6 +87,7 @@ RUN mkdir app
 RUN touch ~/.profile && \
     echo "NODE_PATH=\"$HOME/.node/lib/node_modules:$NODE_PATH\"" >> ~/.profile && \
     echo "PATH=\"$HOME/.node/bin:$PATH\""  >> ~/.profile && \
+    echo "MANPATH=\"$HOME/.node/share/man:$MANPATH\""  >> ~/.profile && \
     cat ~/.npmrc && \
     cat ~/.profile
 
