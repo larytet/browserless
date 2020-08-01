@@ -85,4 +85,5 @@ RUN mkdir -p ./app
 
 COPY . /home/pwuser/app/
 WORKDIR /home/pwuser/app
+EXPOSE 9229
 CMD ["./start.sh"]
