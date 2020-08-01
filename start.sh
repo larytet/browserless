@@ -21,7 +21,7 @@ export DISPLAY=:99
 # Based on https://topaxi.codes/use-npm-without-root-or-sudo-rights/
 export NODE_PATH="$HOME/node_modules/lib:$NODE_PATH"
 echo NODE_PATH=$NODE_PATH
-ls -al $HOME/.node/lib/node_modules
+ls -al $HOME/node_modules
 
 dumb-init -- node --inspect ./src/app.js $@ &
 node=$!
