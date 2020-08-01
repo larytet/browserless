@@ -10,3 +10,5 @@
 * https://developers.google.com/web/updates/2017/04/headless-chrome
 * https://chromium.googlesource.com/chromium/src/+/lkgr/headless/README.md
 * https://github.com/Zenika/alpine-chrome#image-disk-size
+* https://playwright.dev/#
+* https://blog.logrocket.com/playwright-vs-puppeteer/
