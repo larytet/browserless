@@ -64,7 +64,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     wget \
-    curl
+    curl \
+    dumb-init
 
 # 9. Run everything after as non-privileged user.
 USER pwuser
@@ -89,7 +90,7 @@ RUN touch ~/.profile && \
     echo "PATH=\"$HOME/.node/bin:$PATH\""  >> ~/.profile && \
     echo "MANPATH=\"$HOME/.node/share/man:$MANPATH\""  >> ~/.profile && \
     cat ~/.npmrc && \
-    cat ~/.profile
+    cat ~/.profile && \
 
 COPY . /home/pwuser/app/
 WORKDIR /home/pwuser/app
