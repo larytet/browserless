@@ -77,6 +77,7 @@ RUN mkdir ~/.node && \
     touch ~/.npmrc && \
     echo "prefix = ~/.node" >> ~/.npmrc
 
+# See https://github.com/microsoft/playwright/issues/812
 RUN echo "Brace yourself this takes time" && \
-    npm i -D --loglevel verbose playwright
+    npm i -D --loglevel verbose playwright-chromium
 
