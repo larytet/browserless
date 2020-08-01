@@ -93,4 +93,4 @@ RUN touch ~/.profile && \
 
 COPY . /home/pwuser/app/
 WORKDIR /home/pwuser/app
-CMD ["node", "src/app.js"]
+CMD ["start.sh"]
