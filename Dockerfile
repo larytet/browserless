@@ -81,13 +81,17 @@ RUN mkdir ~/.node && \
 RUN echo "Brace yourself this takes time" && \
     npm i -D --loglevel verbose playwright-chromium
 
-# 11. Run it
-RUN mkdir ~/.vnc && \
-    touch ~/.vnc/passwd && \
-    mkdir -p ./app 
+# Add typescript support 
+RUN npm i -D --loglevel verbose typescript
+ENV NODE_PATH="/home/pwuser/node_modules:${NODE_PATH}"
+ENV PATH="/home/pwuser/node_modules/.bin:${PATH}"
 
+# 11. Run it
+RUN mkdir -p ./app 
 COPY . /home/pwuser/app/
 WORKDIR /home/pwuser/app
+RUN tsc --outDir /tmp ./src/app.ts 
+
 EXPOSE 9229
 EXPOSE 5900
 CMD ["./start.sh"]

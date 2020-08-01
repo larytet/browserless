@@ -26,7 +26,7 @@ export NODE_PATH=$HOME/node_modules:$NODE_PATH
 export PATH=$HOME/node_modules/bin:$PATH
 echo NODE_PATH=$NODE_PATH
 
-dumb-init -- node --inspect ./src/app.js $@ &
+dumb-init -- node --inspect /tmp/app.js $@ &
 node=$!
 
 wait $node
