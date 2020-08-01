@@ -3,9 +3,10 @@
 
 ## Usage
 
-    docker build --tag browserless .
-    docker run --rm browserless
-
+```
+docker build --tag browserless .
+docker run --rm browserless
+```
 
 ## Links
 * http://www.smartjava.org/content/using-puppeteer-in-docker/
