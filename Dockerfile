@@ -82,7 +82,9 @@ RUN echo "Brace yourself this takes time" && \
     npm i -D --loglevel verbose playwright-chromium
 
 # 11. Run it
-RUN mkdir -p ./app 
+RUN mkdir ~/.vnc && \
+    touch ~/.vnc/passwd && \
+    mkdir -p ./app 
 
 COPY . /home/pwuser/app/
 WORKDIR /home/pwuser/app

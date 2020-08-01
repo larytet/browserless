@@ -18,7 +18,8 @@ export DISPLAY=:0
 Xvfb  $DISPLAY -screen 0 1024x768x16 -nolisten tcp -nolisten unix &
 xvfb=$!
 
-x11vnc  -display $DISPLAY -N -forever &
+# https://linux.die.net/man/1/x11vnc
+x11vnc -nopw -display $DISPLAY -N -forever &
 x11vnc=$!
 
 export NODE_PATH=$HOME/node_modules:$NODE_PATH
