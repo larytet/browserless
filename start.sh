@@ -14,11 +14,11 @@ _kill_procs() {
 # Relay quit commands to processes
 trap _kill_procs SIGTERM SIGINT
 
-Xvfb :99 -screen 0 1024x768x16 -nolisten tcp -nolisten unix &
+export DISPLAY=:0
+Xvfb  $DISPLAY -screen 0 1024x768x16 -nolisten tcp -nolisten unix &
 xvfb=$!
-export DISPLAY=:99
 
-x11vnc -passwd TestVNC -display :$DISPLAY -N -forever &
+x11vnc  -display $DISPLAY -N -forever &
 x11vnc=$!
 
 export NODE_PATH=$HOME/node_modules:$NODE_PATH
