@@ -27,3 +27,4 @@ rsync -rv --exclude=.git /home/arkady/browserless/. .
 * https://playwright.dev/#
 * https://blog.logrocket.com/playwright-vs-puppeteer/
 * https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md#setting-up-chrome-linux-sandbox
+* https://github.com/mafredri/cdp
