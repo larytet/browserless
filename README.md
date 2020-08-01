@@ -4,7 +4,7 @@
 ## Usage
 
 ```
-docker build --tag browserless .
+docker build --tag browserless . && \
 docker run --rm browserless
 ```
 
