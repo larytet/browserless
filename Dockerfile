@@ -87,7 +87,7 @@ ENV NODE_PATH="/home/pwuser/node_modules:${NODE_PATH}"
 ENV PATH="/home/pwuser/node_modules/.bin:${PATH}"
 
 # 11. Run it
-RUN mkdir -p ./app 
+RUN mkdir -p ./app/ts
 COPY . /home/pwuser/app/
 WORKDIR /home/pwuser/app
 RUN tsc --outDir /tmp ./src/app.ts 
