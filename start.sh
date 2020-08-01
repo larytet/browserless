@@ -18,6 +18,9 @@ Xvfb :99 -screen 0 1024x768x16 -nolisten tcp -nolisten unix &
 xvfb=$!
 export DISPLAY=:99
 
+x11vnc -passwd TestVNC -display :$DISPLAY -N -forever &
+x11vnc=$!
+
 export NODE_PATH=$HOME/node_modules:$NODE_PATH
 export PATH=$HOME/node_modules/bin:$PATH
 echo NODE_PATH=$NODE_PATH
@@ -27,3 +30,4 @@ node=$!
 
 wait $node
 wait $xvfb
+wait $x11vnc
