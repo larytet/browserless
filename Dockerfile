@@ -81,3 +81,8 @@ RUN mkdir ~/.node && \
 RUN echo "Brace yourself this takes time" && \
     npm i -D --loglevel verbose playwright-chromium
 
+# 11. Run it
+RUN mkdir app 
+COPY . /home/pwuser/app/
+WORKDIR /home/pwuser/app
+CMD ["node", "src/app.js"]
