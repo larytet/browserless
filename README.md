@@ -6,6 +6,9 @@
 ```
 docker build --tag browserless . && \
 docker run --rm -p 9229:9229 -p 5900:5900 --cap-add=SYS_ADMIN browserless
+
+# Copy sources to the current directory
+rsync -rv --exclude=.git /home/arkady/browserless/. .
 ```
 
 ## Links
