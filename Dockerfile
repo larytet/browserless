@@ -62,10 +62,15 @@ RUN groupadd -r pwuser && useradd -r -g pwuser -G audio,video pwuser \
 RUN apt-get update && apt-get install -y --no-install-recommends \
     xvfb
 
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    wget
+
 # 9. Run everything after as non-privileged user.
 USER pwuser
 
 # === BAKE BROWSERS INTO IMAGE ===
+
+RUN wget https://github.com/microsoft/playwright/archive/v1.2.1.tar.gz -O playwright.tar.gz
 
 # 1. Add tip-of-tree Playwright package to install its browsers.
 #    The package should be built beforehand from tip-of-tree Playwright.
