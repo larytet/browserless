@@ -73,22 +73,20 @@ USER pwuser
 
 # 10. Install Playwright
 WORKDIR /home/pwuser
-
-RUN mkdir ~/.node && \
-    touch ~/.npmrc
-
 # See https://github.com/microsoft/playwright/issues/812
-RUN echo "Brace yourself this takes time" && \
+RUN echo "Brace yourself: installing 130MB of Chrome takes time" && \
+    touch ~/.npmrc && \
     npm i -D --loglevel verbose playwright-chromium
 
 # Add typescript support 
 RUN npm i -D --loglevel verbose typescript
-ENV NODE_PATH="/home/pwuser/node_modules:${NODE_PATH}"
-ENV PATH="/home/pwuser/node_modules/.bin:${PATH}"
+ENV HOME="/home/pwuser"
+ENV NODE_PATH="$HOME/node_modules:${NODE_PATH}"
+ENV PATH="$HOME/node_modules/.bin:${PATH}"
 
 # 11. Run it
 RUN mkdir -p ./app/ts
-COPY . /home/pwuser/app/
+COPY . ./app/
 WORKDIR /home/pwuser/app
 RUN tsc --outDir /tmp ./src/app.ts 
 
