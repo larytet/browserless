@@ -7,6 +7,7 @@ const { chromium } = require('playwright-chromium');
         while (true) {
             const page = await context.newPage();
             await page.goto('http://cnn.com/');
+            // await page.screenshot({ path: `cnn.png` });
             page.close()
         }
         await browser.close();  
