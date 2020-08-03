@@ -9,7 +9,7 @@ docker run --rm -p 9229:9229 -p 5900:5900 --cap-add=SYS_ADMIN browserless
 # Try VNC 127.0.0.1:5900
 
 # Copy sources to the current directory
-rsync -rv --exclude=.git /home/arkady/browserless/. .
+rsync -rv --exclude=.git ~/browserless/. .
 
 
 ```
