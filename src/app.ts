@@ -6,8 +6,8 @@ const { chromium } = require('playwright-chromium');
         const context = await browser.newContext();
         while (true) {
             const page = await context.newPage();
-            await page.goto('http://whatsmyuseragent.org/');
-            await page.screenshot({ path: `example.png` });
+            await page.goto('http://cnn.com/');
+            await page.screenshot({ path: `cnn.png` });
             page.close()
         }
         await browser.close();  
